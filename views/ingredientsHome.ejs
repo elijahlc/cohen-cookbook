@@ -1,0 +1,13 @@
+<%- include('partials/header.ejs') %>
+		<h2>Ingredients</h2>
+		<ul>
+			<% ingredients.map((ingredient) => { %>
+			<li>
+				<a href="/ingredients/<%=ingredient.id%>"><%=ingredient.name%></a>
+			</li>
+			<% }).join(''); %>
+		</ul>
+		<h2>Add a new recipe</h2>
+		<form></form>
+	</body>
+</html>

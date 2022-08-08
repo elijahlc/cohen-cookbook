@@ -1,0 +1,9 @@
+<%- include('partials/header.ejs') %>
+        <h2>Recipes</h2>
+            <ul>
+                <%recipes.map((recipe) => { %>
+                    <li><a href='/recipes/<%=recipe.id%>'><%=recipe.name%></a></li>
+                <% }).join(''); %>
+            </ul>
+    </body>
+</html>

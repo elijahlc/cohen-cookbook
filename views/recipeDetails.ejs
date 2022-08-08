@@ -1,0 +1,26 @@
+<%- include('partials/header.ejs') %>
+
+        <h2><%=recipe.name%></h2>
+        <section class="details">
+            <ul>
+                <li><b>Where to find:</b> 
+                    <% if(recipe.location.includes('www') || recipe.location.includes('http')) { %>
+                        <a href="<%=recipe.location%>">link</a>
+                    <% } else { %>
+                        <%=recipe.location%>
+                    <% } %>
+                </li>
+                <li><b>Servings:</b> <%=recipe.servings%></li>
+                <li><b>Ingredients:</b>
+                    <%ingredients.map((ingredient) => ingredient.name).join(', ')%>
+                </li>
+                <li><b>Tags:</b> 
+                    <%tags.map((tag) => tag.name).join(', ')%>
+                </li>
+            </ul>
+            <a href="/recipes">Back to all recipes</a>
+        </section>
+        <section>
+        </section>
+    </body>
+</html>

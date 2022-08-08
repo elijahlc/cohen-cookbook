@@ -1,0 +1,16 @@
+<%- include('partials/header.ejs') %>
+        <h2>Recipes with ingredient: <%=matchingRecipes[0].ingredient%></h2>
+        <section class="details">
+            <ul>
+                <% matchingRecipes.map((row) => { %>
+                    <li>
+                        <a href="/recipes/<%=row.recipe_id%>"><%=row.recipe%></a>
+                    </li>
+                    <% }).join(''); %>
+            </ul>
+            <a href="/ingredients">Back to all ingredients</a>
+        </section>
+        <section>
+        </section>
+    </body>
+</html>

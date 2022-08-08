@@ -1,0 +1,9 @@
+<%- include('partials/header.ejs') %>
+        <h2>Tags</h2>
+        <ul>
+            <%tags.map((tag) => { %>
+                <li><a href='/tags/<%=tag.id%>'><%=tag.name%></a></li>
+            <%}).join(''); %>
+        </ul>
+    </body>
+</html>
