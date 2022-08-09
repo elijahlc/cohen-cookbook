@@ -1,19 +1,26 @@
 body {
-	font-family: Arial, Helvetica, sans-serif;
-	background-color: #ede7e3;
+	font-family: sans-serif;
+	font-weight: 100;
+	background-color: #f4f4f8;
 	margin: 0;
 	text-transform: lowercase;
+	color: #3c3c48;
+}
+
+body a {
+	text-decoration: none;
+	color: #2ab7ca;
 }
 
 header {
 	display: flex;
-	background-color: #16697a;
+	background-color: #2ab7ca;
 	padding: 0.25em;
 }
 
 header h1 {
 	flex: 3;
-	color: white;
+	color: #fed766;
 }
 
 nav {
@@ -26,5 +33,57 @@ nav {
 nav a,
 h1 a {
 	text-decoration: none;
+	color: #fed766;
+}
+
+a:hover {
+	color: #fe4a49;
+	font-weight: bold;
+}
+
+main {
+	padding: 0.25em;
+	display: flex;
+	justify-content: space-between;
+}
+
+main section {
+	width: calc(50% - 0.5em);
+}
+
+.right {
+	text-align: center;
+}
+
+.right form {
+	display: flex;
+	flex-direction: column;
+}
+
+.right form select {
+	width: 30%;
+	align-self: center;
+}
+
+.right form input {
+	margin: 0.25em;
+}
+
+.right form button {
+	margin: 0.25em;
+	width: 30%;
+	align-self: center;
+	background-color: #fed766;
 	color: white;
+	border: 1px solid #3c3c48;
+	border-radius: 0.25rem;
+	font-size: 1.2rem;
+}
+
+.right form button:hover {
+	background-color: #fe4a49;
+}
+
+.right form button:active {
+	font-weight: bold;
 }

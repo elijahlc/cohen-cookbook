@@ -17,6 +17,24 @@ app.get('/', async (req, res, next) => {
 	}
 });
 
+app.post('/', async (req, res, next) => {
+	const { name } = req.body;
+
+	try {
+		await client.query(
+			`
+			INSERT INTO ingredients(name)
+			VALUES($1)
+			`,
+			[name]
+		);
+
+		res.redirect('/ingredients');
+	} catch (err) {
+		next(err);
+	}
+});
+
 app.get('/:id', async (req, res, next) => {
 	const { id } = req.params;
 
