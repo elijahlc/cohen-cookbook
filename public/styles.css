@@ -1,26 +1,25 @@
 body {
 	font-family: sans-serif;
 	font-weight: 100;
-	background-color: #f4f4f8;
+	background-color: #87a2ad;
 	margin: 0;
 	text-transform: lowercase;
-	color: #3c3c48;
+	color: #fef9ef;
 }
 
 body a {
 	text-decoration: none;
-	color: #2ab7ca;
+	color: #ffcb77;
 }
 
 header {
 	display: flex;
-	background-color: #2ab7ca;
+	background-color: #295776;
 	padding: 0.25em;
 }
 
 header h1 {
 	flex: 3;
-	color: #fed766;
 }
 
 nav {
@@ -35,14 +34,18 @@ nav a {
 	text-align: center;
 }
 
-nav a,
 h1 a {
 	text-decoration: none;
-	color: #fed766;
+	color: #fef9ef;
+}
+
+nav a {
+	text-decoration: none;
+	color: #ffcb77;
 }
 
 a:hover {
-	color: #fe4a49;
+	color: #487f59;
 	font-weight: bold;
 }
 
@@ -78,15 +81,15 @@ main section {
 	margin: 0.25em;
 	width: 30%;
 	align-self: center;
-	background-color: #fed766;
-	color: white;
+	background-color: #487f59;
+	color: #fef9ef;
 	border: 1px solid #3c3c48;
 	border-radius: 0.25rem;
 	font-size: 1.2rem;
 }
 
 .right form button:hover {
-	background-color: #fe4a49;
+	background-color: #295776;
 }
 
 .right form button:active {
@@ -94,7 +97,7 @@ main section {
 }
 
 footer {
-	background-color: #2ab7ca;
+	background-color: #295776;
 	width: 100%;
 	padding: 0.25em;
 	align-items: center;
@@ -109,7 +112,7 @@ footer div {
 }
 
 footer div a {
-	color: #fed766;
+	color: ##ffcb77;
 }
 
 footer div a:hover {
