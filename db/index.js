@@ -1,9 +1,3 @@
-try {
-	require('../secrets');
-} catch (err) {
-	console.log(err);
-}
-
 const pg = require('pg');
 
 const client = new pg.Client(
