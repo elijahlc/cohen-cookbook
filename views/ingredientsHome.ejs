@@ -1,25 +1,24 @@
 <%- include('partials/header.ejs') %>
-	<main>
-			<section class="left">
-				<h2>Ingredients</h2>
-				<ul>
-					<% ingredients.map((ingredient) => { %>
-					<li>
-						<a href="/ingredients/<%=ingredient.id%>"><%=ingredient.name%></a>
-					</li>
-					<% }).join(''); %>
-				</ul>
-			</section>
-			<section class="right">
-				<h2>Add a new ingredient</h2>
-						<form action="/ingredients" method="POST">
-							<span>
-								<label for="ingredient-name">ingredient:</label>
-								<input type="text" name="name" id="ingredient-name">
-							</span>
-							<button>add!</button>
-						</form>
-			</section>
-		</main>
-	</body>
-</html>
+<main>
+	<section class="left">
+		<h2>Ingredients</h2>
+		<ul>
+			<% ingredients.map((ingredient) => { %>
+			<li>
+				<a href="/ingredients/<%=ingredient.id%>"><%=ingredient.name%></a>
+			</li>
+			<% }).join(''); %>
+		</ul>
+	</section>
+	<section class="right">
+		<h2>Add a new ingredient</h2>
+		<form action="/ingredients" method="POST">
+			<span>
+				<label for="ingredient-name">ingredient:</label>
+				<input type="text" name="name" id="ingredient-name" />
+			</span>
+			<button>add!</button>
+		</form>
+	</section>
+</main>
+<%- include('partials/footer.ejs') %>

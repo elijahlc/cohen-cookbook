@@ -1,45 +1,46 @@
 <%- include('partials/header.ejs') %>
-        <main>
-            <section class="left">
-                <h2><%=recipe.name%></h2>
-                <ul>
-                    <li><b>Where to find:</b> 
-                        <% if(recipe.location.includes('www') || recipe.location.includes('http')) { %>
-                            <a href="<%=recipe.location%>">link</a>
-                        <% } else { %>
-                            <%=recipe.location%>
-                        <% } %>
-                    </li>
-                    <li><b>Servings:</b> <%=recipe.servings%></li>
-                    <li><b>Ingredients:</b>
-                        <%=ingredients.map((ingredient) => ingredient.name).join(', ')%>
-                    </li>
-                    <li><b>Tags:</b> 
-                        <%=tags.map((tag) => tag.name).join(', ')%>
-                    </li>
-                </ul>
-                <a href="/recipes">Back to all recipes</a>
-            </section>
-            <section class="right">
-                <h2>Tag this recipe</h2>
-                <form action="/recipes/<%=recipe.id%>/tags" method="POST">
-                    <select name="tagId" id="tag">
-                        <% availableTags.map((tag) => { %>
-                            <option value="<%=tag.id%>"><%=tag.name%></option>
-                        <% }) %>
-                    </select>
-                    <button>add tag</button>
-                </form>
-                <h2>Add an ingredient to this recipe</h2>
-                <form action="/recipes/<%=recipe.id%>/ingredients" method="POST">
-                    <select name="ingredientId" id="ingredient">
-                        <% availableIngredients.map((ingredient) => { %>
-                            <option value="<%=ingredient.id%>"><%=ingredient.name%></option>
-                        <% }) %>
-                    </select>
-                    <button>add ingredient</button>
-                </form>
-            </section>
-        </main>
-    </body>
-</html>
+<main>
+	<section class="left">
+		<h2><%=recipe.name%></h2>
+		<ul>
+			<li>
+				<b>Where to find:</b>
+				<% if(recipe.location.includes('www') ||
+				recipe.location.includes('http')) { %>
+				<a href="<%=recipe.location%>">link</a>
+				<% } else { %> <%=recipe.location%> <% } %>
+			</li>
+			<li><b>Servings:</b> <%=recipe.servings%></li>
+			<li>
+				<b>Ingredients:</b>
+				<%=ingredients.map((ingredient) => ingredient.name).join(', ')%>
+			</li>
+			<li>
+				<b>Tags:</b>
+				<%=tags.map((tag) => tag.name).join(', ')%>
+			</li>
+		</ul>
+		<a href="/recipes">Back to all recipes</a>
+	</section>
+	<section class="right">
+		<h2>Tag this recipe</h2>
+		<form action="/recipes/<%=recipe.id%>/tags" method="POST">
+			<select name="tagId" id="tag">
+				<% availableTags.map((tag) => { %>
+				<option value="<%=tag.id%>"><%=tag.name%></option>
+				<% }) %>
+			</select>
+			<button>add tag</button>
+		</form>
+		<h2>Add an ingredient to this recipe</h2>
+		<form action="/recipes/<%=recipe.id%>/ingredients" method="POST">
+			<select name="ingredientId" id="ingredient">
+				<% availableIngredients.map((ingredient) => { %>
+				<option value="<%=ingredient.id%>"><%=ingredient.name%></option>
+				<% }) %>
+			</select>
+			<button>add ingredient</button>
+		</form>
+	</section>
+</main>
+<%- include('partials/footer.ejs') %>

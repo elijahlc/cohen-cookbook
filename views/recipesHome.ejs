@@ -1,31 +1,30 @@
 <%- include('partials/header.ejs') %>
-        <main>
-            <section class="left">
-            <h2>Recipes</h2>
-            <ul>
-                <%recipes.map((recipe) => { %>
-                    <li><a href='/recipes/<%=recipe.id%>'><%=recipe.name%></a></li>
-                <% }).join(''); %>
-            </ul>
-            </section>
-            <section class="right">
-                <h2>Add a new recipe</h2>
-                <form action="/recipes" method="POST">
-                    <span>
-                        <label for="recipe-name">name of recipe:</label>
-                        <input type="text" name="name" id="recipe-name">
-                    </span>
-                    <span>
-                        <label for="recipe-location">where's the recipe from?</label>
-                        <input type="text" name="location" id="recipe-location">
-                    </span>
-                    <span>
-                        <label for="recipe-servings">how many servings?</label>
-                        <input type="number" name="servings" id="recipe-servings">
-                    </span>
-                    <button>add!</button>
-                </form>
-            </section>
-        </main>
-    </body>
-</html>
+<main>
+	<section class="left">
+		<h2>Recipes</h2>
+		<ul>
+			<%recipes.map((recipe) => { %>
+			<li><a href="/recipes/<%=recipe.id%>"><%=recipe.name%></a></li>
+			<% }).join(''); %>
+		</ul>
+	</section>
+	<section class="right">
+		<h2>Add a new recipe</h2>
+		<form action="/recipes" method="POST">
+			<span>
+				<label for="recipe-name">name of recipe:</label>
+				<input type="text" name="name" id="recipe-name" />
+			</span>
+			<span>
+				<label for="recipe-location">where's the recipe from?</label>
+				<input type="text" name="location" id="recipe-location" />
+			</span>
+			<span>
+				<label for="recipe-servings">how many servings?</label>
+				<input type="number" name="servings" id="recipe-servings" />
+			</span>
+			<button>add!</button>
+		</form>
+	</section>
+</main>
+<%- include('partials/footer.ejs') %>
