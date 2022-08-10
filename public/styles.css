@@ -31,17 +31,15 @@ nav {
 
 nav a {
 	flex: 1;
+	font-size: 1.25em;
 	text-align: center;
+	text-decoration: none;
+	color: #ffcb77;
 }
 
 h1 a {
 	text-decoration: none;
 	color: #fef9ef;
-}
-
-nav a {
-	text-decoration: none;
-	color: #ffcb77;
 }
 
 a:hover {
@@ -117,4 +115,23 @@ footer div a {
 
 footer div a:hover {
 	font-weight: bold;
+}
+
+@media (max-width: 575px) {
+	nav {
+		flex-direction: column;
+		align-items: flex-end;
+		justify-content: center;
+	}
+	nav a {
+		flex: 0;
+	}
+
+	main {
+		flex-direction: column;
+	}
+
+	main section {
+		width: calc(100% - 0.5em);
+	}
 }
