@@ -37,12 +37,17 @@ nav a {
 	color: #ffcb77;
 }
 
+a:hover {
+	color: #87a2ad;
+	font-weight: bold;
+}
+
 h1 a {
 	text-decoration: none;
 	color: #fef9ef;
 }
 
-a:hover {
+main a:hover {
 	color: #487f59;
 	font-weight: bold;
 }
@@ -53,12 +58,23 @@ main {
 	justify-content: space-between;
 }
 
-main section {
-	width: calc(50% - 0.5em);
+main > section {
+	flex: 1;
+	margin: 0 1em;
 }
 
 .right {
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form {
+	border: 1px solid #295776;
+	border-radius: 5px;
+	margin: 0.5em;
+	width: 75%;
 }
 
 .right form {
@@ -67,7 +83,6 @@ main section {
 }
 
 .right form select {
-	width: 30%;
 	align-self: center;
 }
 
@@ -75,9 +90,26 @@ main section {
 	margin: 0.25em;
 }
 
+form input,
+form select {
+	border: 1px solid #295776;
+	box-sizing: border box;
+	border-radius: 2px;
+	font-size: 1em;
+	color: #295776;
+	font-weight: 100;
+}
+
+form input:focus-visible,
+form select:focus-visible {
+	border: 1px solid #487f59;
+	outline: 1px solid #487f59;
+	border-radius: 2px;
+}
+
 .right form button {
 	margin: 0.25em;
-	width: 30%;
+	padding: 0 2em;
 	align-self: center;
 	background-color: #487f59;
 	color: #fef9ef;
@@ -101,6 +133,7 @@ footer {
 	align-items: center;
 	position: fixed;
 	bottom: 0;
+	font-size: 1.5em;
 }
 
 footer div {
@@ -113,8 +146,10 @@ footer div a {
 	color: #ffcb77;
 }
 
-footer div a:hover {
-	font-weight: bold;
+.error {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 @media (max-width: 575px) {
@@ -123,6 +158,7 @@ footer div a:hover {
 		align-items: flex-end;
 		justify-content: center;
 	}
+
 	nav a {
 		flex: 0;
 	}
@@ -133,5 +169,14 @@ footer div a:hover {
 
 	main section {
 		width: calc(100% - 0.5em);
+	}
+
+	form span {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.right form input {
+		margin: 0 3em;
 	}
 }

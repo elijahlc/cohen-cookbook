@@ -11,14 +11,16 @@
 		</ul>
 	</section>
 	<section class="right">
-		<h2>Add a new ingredient</h2>
-		<form action="/ingredients" method="POST">
-			<span>
-				<label for="ingredient-name">ingredient:</label>
-				<input type="text" name="name" id="ingredient-name" />
-			</span>
-			<button>add!</button>
-		</form>
+		<section class="form">
+			<h2>Add a new ingredient</h2>
+			<form action="/ingredients" method="POST">
+				<span>
+					<label for="ingredient-name">ingredient:</label>
+					<input type="text" name="name" id="ingredient-name" />
+				</span>
+				<button>add!</button>
+			</form>
+		</section>
 	</section>
 </main>
 <%- include('partials/footer.ejs') %>

@@ -9,14 +9,16 @@
 		</ul>
 	</section>
 	<section class="right">
-		<h2>Add a new tag</h2>
-		<form action="/tags" method="POST">
-			<span>
-				<label for="tag-name">tag:</label>
-				<input type="text" name="name" id="tag-name" />
-			</span>
-			<button>add!</button>
-		</form>
+		<section class="form">
+			<h2>Add a new tag</h2>
+			<form action="/tags" method="POST">
+				<span>
+					<label for="tag-name">tag:</label>
+					<input type="text" name="name" id="tag-name" />
+				</span>
+				<button>add!</button>
+			</form>
+		</section>
 	</section>
 </main>
 <%- include('partials/footer.ejs') %>

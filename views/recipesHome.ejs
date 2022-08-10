@@ -9,22 +9,24 @@
 		</ul>
 	</section>
 	<section class="right">
-		<h2>Add a new recipe</h2>
-		<form action="/recipes" method="POST">
-			<span>
-				<label for="recipe-name">name of recipe:</label>
-				<input type="text" name="name" id="recipe-name" />
-			</span>
-			<span>
-				<label for="recipe-location">where's the recipe from?</label>
-				<input type="text" name="location" id="recipe-location" />
-			</span>
-			<span>
-				<label for="recipe-servings">how many servings?</label>
-				<input type="number" name="servings" id="recipe-servings" />
-			</span>
-			<button>add!</button>
-		</form>
+		<section class="form">
+			<h2>Add a new recipe</h2>
+			<form action="/recipes" method="POST">
+				<span>
+					<label for="recipe-name">name of recipe:</label>
+					<input type="text" name="name" id="recipe-name" />
+				</span>
+				<span>
+					<label for="recipe-location">where's the recipe from?</label>
+					<input type="text" name="location" id="recipe-location" />
+				</span>
+				<span>
+					<label for="recipe-servings">how many servings?</label>
+					<input type="number" name="servings" id="recipe-servings" />
+				</span>
+				<button>add!</button>
+			</form>
+		</section>
 	</section>
 </main>
 <%- include('partials/footer.ejs') %>
