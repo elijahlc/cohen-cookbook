@@ -4,21 +4,27 @@ const client = require('../db');
 
 app.get('/', async (req, res, next) => {
 	try {
-		const response = await client.query(`
-            SELECT * FROM recipes
+		const responseRecipes = await client.query(`
+            SELECT id, name FROM recipes
             ORDER BY name;
         `);
 
-		const recipes = response.rows;
+		const responseTags = await client.query(`
+			SELECT id, name FROM tags
+			ORDER BY name;
+		`);
 
-		res.render('../views/recipesHome', { recipes });
+		const recipes = responseRecipes.rows;
+		const tags = responseTags.rows;
+
+		res.render('../views/recipesHome', { recipes, tags });
 	} catch (err) {
 		next(err);
 	}
 });
 
 app.post('/', async (req, res, next) => {
-	const { name, location, servings } = req.body;
+	const { name, location, servings, tags } = req.body;
 
 	try {
 		const newRecipe = await client.query(
@@ -29,6 +35,16 @@ app.post('/', async (req, res, next) => {
 			`,
 			[name, location, servings * 1]
 		);
+
+		tags.forEach(async (tag) => {
+			await client.query(
+				`
+			INSERT INTO recipe_tags(recipe_id, tag_id)
+			VALUES($1, $2);
+			`,
+				[newRecipe.rows[0].id, parseInt(tag * 1)]
+			);
+		});
 
 		res.redirect(`/recipes/${newRecipe.rows[0].id}`);
 	} catch (err) {

@@ -12,18 +12,33 @@
 		<section class="form">
 			<h2>Add a new recipe</h2>
 			<form action="/recipes" method="POST">
-				<span>
+				<span class="input">
 					<label for="recipe-name">name of recipe:</label>
 					<input type="text" name="name" id="recipe-name" />
 				</span>
-				<span>
+				<span class="input">
 					<label for="recipe-location">where's the recipe from?</label>
 					<input type="text" name="location" id="recipe-location" />
 				</span>
-				<span>
+				<span class="input">
 					<label for="recipe-servings">how many servings?</label>
 					<input type="number" name="servings" id="recipe-servings" />
 				</span>
+				<fieldset class="checkbox">
+					<h3>tag this recipe:</h3>
+					<span>
+						<%tags.map((tag) => { %>
+						<input
+							type="checkbox"
+							id="tag-<%=tag.id%>"
+							name="tags"
+							value="<%=tag.id%>"
+						/>
+						<label for="tag-<%=tag.id%>"><%=tag.name%></label>
+						<br />
+						<%}) %>
+					</span>
+				</fieldset>
 				<button>add!</button>
 			</form>
 		</section>

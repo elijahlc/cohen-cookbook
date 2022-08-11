@@ -82,6 +82,19 @@ main > section {
 	flex-direction: column;
 }
 
+fieldset {
+	display: flex;
+	justify-content: space-around;
+	border: none;
+	border-top: 1px solid #295776;
+	margin-top: 1em;
+}
+
+fieldset h3 {
+	align-self: center;
+	font-weight: 100;
+}
+
 .right form select {
 	align-self: center;
 }
@@ -171,12 +184,17 @@ footer div a {
 		width: calc(100% - 0.5em);
 	}
 
-	form span {
+	form > span,
+	fieldset {
 		display: flex;
 		flex-direction: column;
 	}
 
-	.right form input {
-		margin: 0 3em;
+	fieldset h3 {
+		margin: 0.2em 0;
+	}
+
+	.input {
+		margin: 0.2em 3em;
 	}
 }
